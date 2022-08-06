@@ -1,0 +1,12 @@
+body 
+{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #752160 !important;
+}
+html ul li 
+{
+    margin: 0;
+    padding: 0;
+}

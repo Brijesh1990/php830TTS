@@ -84,12 +84,19 @@ body
     background-color: #306fcf !important;
     color: white !important;
 }
-.bi-facebook,.bi-instagram,.bi-google,.bi-telegram,.bi-twitter 
+.bi-facebook,.bi-instagram,.bi-google,.bi-telegram,.bi-twitter
 {
     font-size: 24px;
     letter-spacing: 10px;
     color: #306fcf;
     transition: 0.5s ease all;
+}
+.crt 
+{
+    font-size: 17px;
+    letter-spacing: 2px;
+    color: #306fcf;
+ 
 }
 .bi-facebook:hover,
 .bi-instagram:hover,

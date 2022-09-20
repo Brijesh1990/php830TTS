@@ -40,7 +40,7 @@ crossorigin="anonymous"></script>
 <i class="bi bi-twitter"></i>
 <i class="bi bi-google"></i>
 <i class="bi bi-telegram"></i>
-
+<a href="<?php echo $mainurl;?>viewcart"><b class="crt">Cart <i class="bi bi-cart"><span class="badge badge-lg bg-danger">0</span></i></b></a>
 </div>
 </div>
 </div>

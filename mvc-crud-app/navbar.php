@@ -13,6 +13,6 @@
         <li><a href="#" data-bs-toggle="modal" data-bs-target="#log">SignIn!</a></li>
       </ul>
       </li>
-      <li><a href="<?php echo $mainurl;?>contact-us">Contactus</a></li>
+      <li><a href="<?php echo $mainurl;?>contactus">Contactus</a></li>
     </ul>
   </nav>

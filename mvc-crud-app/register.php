@@ -29,6 +29,18 @@
           </div>
 
           <div class="form-group mt-2">
+            <input type="password" name="cpass" class="form-control" placeholder="Enter confirm Password *">
+          </div>
+
+          <div class="form-group mt-2">
+            <input type="text" name="mobile" class="form-control" placeholder="Enter Phone *">
+          </div>
+
+          <div class="form-group mt-2">
+            <textarea name="address" class="form-control" placeholder="Enter Address *"></textarea>
+          </div>
+
+          <div class="form-group mt-2">
             <input type="submit" name="reg" class="btn btn-lg" id="btn" placeholder="Enter FirstName *"
               value="Register">
 

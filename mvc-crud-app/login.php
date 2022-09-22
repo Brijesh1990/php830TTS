@@ -8,25 +8,26 @@
         <hr class="border border-2 border-danger">
 
 
-        <form class="row g-3 needs-validation" novalidate>
-
+        <form method="post" class="row g-3 needs-validation" novalidate>
+        <input type="hidden" name="fname" class="form-control" id="validationCustom03" required placeholder="Enter firstname *">
           <div class="col-md-8">
 
-            <input type="email" class="form-control" id="validationCustom03" required placeholder="Enter Email *">
+            <input type="email" name="email" class="form-control" id="validationCustom03" required placeholder="Enter Email *">
             <div class="invalid-feedback">
               Please provide a email Address.
             </div>
           </div>
 
+        
           <div class="col-md-8">
 
-            <input type="password" class="form-control" id="validationCustom03" required placeholder="Enter Password *">
+            <input type="password" class="form-control" id="validationCustom03" name="pass" required placeholder="Enter Password *">
             <div class="invalid-feedback">
               Please provide a Password.
             </div>
           </div>
           <div class="col-12">
-            <button class="btn btn-primary" type="submit">Login</button>
+            <button class="btn btn-primary" type="submit" name="log">Login</button>
             <b><a href="register.html">Forget Password</a></b>
           </div>
           <div class="form-group mt-2">

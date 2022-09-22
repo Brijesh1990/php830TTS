@@ -4,6 +4,7 @@ class model
     public $connection="";
     public function __construct()
     {
+        session_start();
         // database connections
         try 
         {
@@ -38,6 +39,40 @@ class model
         
          $exe=mysqli_query($this->connection,$insert);
          return $exe;
+    }
+
+    //create a member function for login as customer
+
+     public function logincustomer($table,$em,$pass)
+     {
+        $sel="select * from $table where text_email='$em' and text_password='$pass'";
+        $exe=mysqli_query($this->connection,$sel);
+        $fetch=mysqli_fetch_array($exe);
+        $num_rows=mysqli_num_rows($exe);
+        if($num_rows==1)
+        {
+            
+           $_SESSION['customer_id']=$fetch["customer_id"];
+           $_SESSION['fname']=$fetch["text_firstname"];
+           $_SESSION['email']=$fetch["text_email"];
+           return true;
+        }
+        else 
+        {
+          return false;
+        }
+
+     }
+    // create a member function logout 
+
+    public function logout()
+    {
+        unset($_SESSION['customer_id']);
+        unset($_SESSION['fname']);
+        unset($_SESSION['email']);
+        session_destroy();
+        return true;
+        
     }
 }
 ?>

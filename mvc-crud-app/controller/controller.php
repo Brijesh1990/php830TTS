@@ -57,7 +57,45 @@ class controller extends model
         window.location='create-account';
         </script>";
       }
+    }
+    // login as customer 
+
+     if(isset($_POST["log"]))
+     {
+     
+      $em=$_POST["email"];
+      $pass=base64_encode($_POST["pass"]);
+
+      $chk=$this->logincustomer('tbl_customer',$em,$pass);
+      if($chk)
+      {
+        echo "<script>
+        alert('You are Logged In successfully!')
+        window.location='./';
+        </script>";
       }
+      else 
+      {
+        echo "<script>
+        alert('Your email and password does not matched try again!')
+        window.location='./';
+        </script>";
+      }
+     }
+
+    //  logout here
+    if(isset($_GET["logout-here"]))
+    {
+      $lg=$_GET['logout-here'];
+      $log=$this->logout();
+      if($log)
+      {
+        echo "<script>
+        alert('You are Logout successfully!')
+        window.location='./';
+        </script>";
+      }
+    }
     // load your views here using controller routing
     if(isset($_SERVER["PATH_INFO"]))
     {
@@ -102,6 +140,39 @@ class controller extends model
             require_once("header.php");
             require_once("navbar.php");
             require_once("contactus.php");
+            require_once("footer.php");
+            require_once("login.php");
+            break;
+          case '/manageprofile':
+            require_once("index.php");
+            require_once("header.php");
+            require_once("navbar.php");
+            require_once("manageprofile.php");
+            require_once("footer.php");
+            require_once("login.php");
+            break;
+          case '/notifications':
+            require_once("index.php");
+            require_once("header.php");
+            require_once("navbar.php");
+            require_once("notifications.php");
+            require_once("footer.php");
+            require_once("login.php");
+            break;
+          case '/myorders':
+            require_once("index.php");
+            require_once("header.php");
+            require_once("navbar.php");
+            require_once("myorders.php");
+            require_once("footer.php");
+            require_once("login.php");
+            break;
+
+          case '/changepassword':
+            require_once("index.php");
+            require_once("header.php");
+            require_once("navbar.php");
+            require_once("changepassword.php");
             require_once("footer.php");
             require_once("login.php");
             break;

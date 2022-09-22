@@ -10,7 +10,7 @@ body
     height: auto;
     position: sticky;
     top: 0 !important;
-    z-index: 3;
+    z-index: 5 !important;
     background-color: white !important;
     box-shadow: 0px 2px lightgray;
 }
@@ -19,29 +19,34 @@ body
     color: #306fcf;
     font-size: 20px;
     letter-spacing: 2px;
+    z-index: 10 !important;
 }
 .navbar 
 {
     width: 100% !important;
     height: auto !important;
     background-color: #306fcf;
+    
 }
 .navbar-link li 
 {
     display: inline-block;
     padding: 5px 20px;
+
 }
 .navbar-link a 
 {
     color: white;
     text-decoration: none;
     list-style-type: none;
+  
 }
 .navbar-brand
 {
     font-size: 20px !important;
     color: white !important;
     margin-left: 5% !important;
+    
 }
 .navbar-link a:hover  
 {
@@ -50,6 +55,20 @@ body
 .dropdown-menu 
 {
     background-color: #306fcf !important;
+   
+   
+}
+.sidebar-link li 
+{
+    display: block;
+    padding: 5px 8px;
+
+}
+.sidebar-link a 
+{
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
 }
 .line1 
 {

@@ -61,8 +61,19 @@ class model
         {
           return false;
         }
-
      }
+    //create a member function for fetch all data
+    public function selectalldata($table)
+    {
+        $select="select * from $table";
+        $exe=mysqli_query($this->connection,$select);
+        while($fetch=mysqli_fetch_array($exe))
+        {
+            $arr[]=$fetch;
+        }
+        return $arr;
+    }
+
     // create a member function logout 
 
     public function logout()

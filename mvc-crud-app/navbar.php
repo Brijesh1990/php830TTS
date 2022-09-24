@@ -1,6 +1,12 @@
 <!-- navbar -->
-  <nav class="navbar navbar-expand">
+  <nav class="navbar navbar-expand-md">
     <a href="<?php echo $mainurl;?>" class="navbar-brand"><span class="bi bi-basket-fill shadow-lg" style="font-size:30px"></span>&nbsp;&nbsp;Shraddha commerce</a>
+    <!-- toggler button add here -->
+    <button class="btn btn-lg  navbar-toggler" data-bs-toggle="collapse" data-bs-target="#NavToggle">
+     <span class="bi bi-grid-3x3-gap"></span>
+    </button>  
+
+    <div class="collapse navbar-collapse" id="NavToggle">
     <ul class="navbar-link">
       <li><a href="<?php echo $mainurl;?>">Home</a></li>
       <li><a href="<?php echo $mainurl;?>Womens-Products">Women's Products</a></li>
@@ -38,4 +44,5 @@
       ?>
       <li><a href="<?php echo $mainurl;?>contactus">Contactus</a></li>
     </ul>
+    </div>
   </nav>

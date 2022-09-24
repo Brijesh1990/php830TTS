@@ -35,10 +35,21 @@ class controller extends model
         $em=$_POST["email"];
         $pass=base64_encode($_POST["pass"]);
         $cpass=base64_encode($_POST["cpass"]);
+        $dob=$_POST["dob"];
+        //upload photo here
+        $tmp_name=$_FILES['img']["tmp_name"];
+        $type=$_FILES["img"]["type"];
+        $size=$_FILES["img"]["size"]/1024;
+        $path="uploads/customers/".$_FILES["img"]["name"];
+        move_uploaded_file($tmp_name,$path);
+        $g=$_POST["gender"];
         $mob=$_POST["mobile"];
         $add=$_POST["address"];
+        $state=$_POST["state"];
+        $city=$_POST["city"];
         $rdatetime=date("d/m/Y H:i:s a");
-        $data=array("text_firstname"=>$fnm,"text_lastname"=>$lnm,"text_email"=>$em,"text_password"=>$pass,"text_phone"=>$mob,"text_address"=>$add,"text_rdatetime"=>$rdatetime);
+
+        $data=array("text_firstname"=>$fnm,"text_lastname"=>$lnm,"text_email"=>$em,"text_password"=>$pass,"dob"=>$dob,"upload_photo"=>$path,"gender"=>$g,"text_phone"=>$mob,"text_address"=>$add,"sid"=>$state,"ctid"=>$city,"text_rdatetime"=>$rdatetime);
         if($pass==$cpass)
         {
         $chk=$this->insertalladata('tbl_customer',$data);
@@ -82,7 +93,10 @@ class controller extends model
         </script>";
       }
      }
-
+    // fetch a state in register form as dropdown data
+     $st=$this->selectalldata('tbl_state');  
+    // fetch a city in register form as dropdown data
+    $ct=$this->selectalldata('tbl_city');  
     //  logout here
     if(isset($_GET["logout-here"]))
     {

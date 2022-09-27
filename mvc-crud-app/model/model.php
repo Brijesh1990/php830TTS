@@ -73,7 +73,53 @@ class model
         }
         return $arr;
     }
+    //create a member function for forget password
+    public function frgpassword($table,$column,$column1,$em)
+    {
+        $select="select $column from $table where $column1='$em'";
+        $exe=mysqli_query($this->connection,$select);
+        $num_rows=mysqli_num_rows($exe);
+        $fetch=mysqli_fetch_array($exe);
+        if($num_rows==1)
+        {
+        $pass=base64_decode($fetch[$column]);
+        return $pass;
+        }
+        else 
+        {
+            return false;
+        }
+    }
 
+     //create a member function for change  password
+     public function chngpassword($table,$opass,$npass,$cpass,$customerid)
+     {
+         $select="select text_password from $table where customer_id='$customerid'";
+         $exe=mysqli_query($this->connection,$select);
+         $fetch=mysqli_fetch_array($exe);
+         $pass=$fetch['text_password'];
+         if($pass==$opass && $npass==$cpass)
+         {
+         $upd="update $table set text_password='$npass' where customer_id='$customerid'";
+         $exe=mysqli_query($this->connection,$upd);
+         return true;
+         }
+         else 
+         {
+             return false;
+         }
+     }
+
+     //create a member function for manageprofile
+     public function manageprofile($table,$table1,$table2,$where,$where1,$column,$customerid)
+     {
+        $select="select * from $table join $table1 on $where join $table2 on $where1 where $column='$customerid'";
+        $exe=mysqli_query($this->connection,$select);
+        $fetch=mysqli_fetch_array($exe);
+        $arr[]=$fetch;
+        return $arr;
+     }
+    
     // create a member function logout 
 
     public function logout()

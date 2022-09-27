@@ -1,6 +1,5 @@
-
-  <!-- login form modal -->
-  <div class="modal fade p-5" id="log" role="dialog">
+<!-- login form modal -->
+   <div class="modal fade p-5" id="log" role="dialog">
     <div class="modal-dialog">
     <div class="modal-content">
     <div class="row">
@@ -24,8 +23,6 @@
               Please provide a email Address.
             </div>
           </div>
-
-        
           <div class="col-md-12">
 
             <input type="password" class="form-control" id="validationCustom03" name="pass" required placeholder="Enter Password *">
@@ -35,7 +32,7 @@
           </div>
           <div class="col-12">
             <button class="btn btn-primary" type="submit" name="log">Login</button>
-            <b><a href="register.html">Forget Password</a></b>
+            <b><a href="<?php echo $mainurl;?>forgetpassword">Forget Password</a></b>
           </div>
           <div class="form-group mt-2">
             <b>Don't have an account ? <a href="register.html">Register here</a></b>
@@ -44,6 +41,5 @@
       </div>
 </div>
 </div>
-
-    </div>
-  </div>
+</div>
+</div>

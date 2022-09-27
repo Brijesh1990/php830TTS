@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 24, 2022 at 06:24 AM
+-- Generation Time: Sep 27, 2022 at 07:13 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -111,7 +111,7 @@ CREATE TABLE `tbl_customer` (
 --
 
 INSERT INTO `tbl_customer` (`customer_id`, `text_firstname`, `text_lastname`, `text_email`, `text_password`, `dob`, `upload_photo`, `gender`, `text_phone`, `text_address`, `sid`, `ctid`, `text_rdatetime`) VALUES
-(1, 'charmi', 'pandya', 'charmithummar444@gmail.com', 'MTIzNDU2', '2022-09-24', 'uploads/customers/brijesh.jpg', 'female', 9998003879, '150 feet ring road rajkot', 1, 1, '24/09/2022 09:22:56 am');
+(1, 'charmi', 'pandya', 'charmithummar444@gmail.com', 'Y2hhcm1pJCQxMjM=', '2022-09-24', 'uploads/customers/brijesh.jpg', 'female', 9998003879, '150 feet ring road rajkot', 1, 1, '24/09/2022 09:22:56 am');
 
 -- --------------------------------------------------------
 

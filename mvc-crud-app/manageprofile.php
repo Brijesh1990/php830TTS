@@ -18,42 +18,45 @@
         <li><a href="<?php echo $mainurl;?>?logout-here" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure to logout as Customer ?')">Logout! <i class="bi bi-power"></i></a></li>
       </ul>
       </div>
-
       <div class="col-md-7">
-      
-        <form method="post" name="frm" id="frm" action="welcome.html" onsubmit="return valid(this.value)">
-          <div class="form-group mt-2">
-            <input type="text" name="fname" class="form-control" placeholder="Enter FirstName *">
+        <form method="post" name="frm" id="frm"  onsubmit="return valid(this.value)">
+
+        <div class="form-group mt-2">
+           <div class="img-thumbnail rounded-circle" style="width:220px; height:210px">
+            <img src="<?php echo  $showprof[0]["upload_photo"];?>" class="img-fluid rounded-circle" style="width:220px; height:210px">
+            </div>
+            <input type="file" name="img" class="form-control mt-2" >
           </div>
-          <div id="error"></div>
+       
+        <div class="row">
+          <div class="col-md-6">
           <div class="form-group mt-2">
-            <input type="text" name="lname" class="form-control" placeholder="Enter LastName *">
+            <input type="text" name="fname" value="<?php echo $showprof[0]["text_firstname"];?>" class="form-control" placeholder="Enter FirstName *">
+            <div id="error"></div>
+          </div>
+          </div>
+  
+          <div class="col-md-6">
+          <div class="form-group mt-2">
+            <input type="text" name="lname" value="<?php echo $showprof[0]["text_lastname"];?>" class="form-control" placeholder="Enter LastName *">
+          </div>
+          </div> 
           </div>
           <div class="form-group mt-2">
-            <input type="text" name="email" class="form-control" placeholder="Enter Email *">
+            <input type="text" name="email" value="<?php echo $showprof[0]["text_email"];?>" class="form-control" placeholder="Enter Email *">
           </div>
+       
           <div class="form-group mt-2">
-            <input type="password" name="pass" class="form-control" placeholder="Enter Password *">
+            <input type="text" name="mobile"  value="<?php echo $showprof[0]["text_phone"];?>"  class="form-control" placeholder="Enter Phone *">
           </div>
 
           <div class="form-group mt-2">
-            <input type="password" name="cpass" class="form-control" placeholder="Enter confirm Password *">
-          </div>
-
-          <div class="form-group mt-2">
-            <input type="text" name="mobile" class="form-control" placeholder="Enter Phone *">
-          </div>
-
-          <div class="form-group mt-2">
-            <textarea name="address" class="form-control" placeholder="Enter Address *"></textarea>
+            <textarea name="address" class="form-control" placeholder="Enter Address *"><?php echo $showprof[0]["text_address"];?></textarea>
           </div>
 
           <div class="form-group mt-2">
             <input type="submit" name="upd" class="btn btn-lg" id="btn"
               value="Update Profile!">
-
-     
-
           </div>
          
         </form>

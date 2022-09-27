@@ -97,6 +97,60 @@ class controller extends model
      $st=$this->selectalldata('tbl_state');  
     // fetch a city in register form as dropdown data
     $ct=$this->selectalldata('tbl_city');  
+    // forget password here
+    if(isset($_POST["frg"]))
+    {
+      $em=$_POST["email"];
+      $chk=$this->frgpassword('tbl_customer','text_password','text_email',$em);
+      if($chk)
+      {
+        echo "<script>
+        alert('Your password is :'+''+'$chk')
+        window.location='./';
+        </script>";
+      }
+      else 
+      {
+        echo "<script>
+        alert('Your email does not registered with us try again')
+        window.location='forgetpassword';
+        </script>";
+      }
+
+    }
+
+     // change password here
+     if(isset($_POST["chang"]))
+     {
+       $customerid=$_SESSION["customer_id"];
+       $opass=base64_encode($_POST["opass"]);
+       $npass=base64_encode($_POST["npass"]);
+       $cpass=base64_encode($_POST["cpass"]);
+      
+       $chk=$this->chngpassword('tbl_customer',$opass,$npass,$cpass,$customerid);
+
+       if($chk)
+       {
+         echo "<script>
+         alert('Your password successfully changed')
+         window.location='./';
+         </script>";
+       }
+       else 
+       {
+         echo "<script>
+         alert('Your old password,new password and confirm password does not matched try again ')
+         window.location='changepassword';
+         </script>";
+       }
+ 
+     }
+    //  manage your profile here
+    if(isset($_SESSION["customer_id"]))
+    {
+      $customerid=$_SESSION["customer_id"];
+      $showprof=$this->manageprofile('tbl_customer','tbl_state','tbl_city','tbl_customer.sid=tbl_state.sid','tbl_customer.ctid=tbl_city.ctid','customer_id',$customerid);
+    }
     //  logout here
     if(isset($_GET["logout-here"]))
     {
@@ -187,6 +241,16 @@ class controller extends model
             require_once("header.php");
             require_once("navbar.php");
             require_once("changepassword.php");
+            require_once("footer.php");
+            require_once("login.php");
+            break;
+
+            
+          case '/forgetpassword':
+            require_once("index.php");
+            require_once("header.php");
+            require_once("navbar.php");
+            require_once("forgetpassword.php");
             require_once("footer.php");
             require_once("login.php");
             break;

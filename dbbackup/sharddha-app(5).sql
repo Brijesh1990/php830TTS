@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2022 at 06:58 AM
+-- Generation Time: Nov 19, 2022 at 05:19 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -136,7 +136,8 @@ INSERT INTO `tbl_cart` (`cartid`, `customer_id`, `product_id`, `pname`, `quantit
 (1, 3, 3, 'westen choli', 1, 3999, 3999, 'pending'),
 (2, 3, 1, 'Fancy Chaniya Choli', 3, 3900, 11700, 'pending'),
 (3, 3, 1, 'Fancy Chaniya Choli', 3, 3900, 11700, 'pending'),
-(4, 4, 3, 'westen choli', 2, 3999, 7998, 'pending');
+(4, 4, 3, 'westen choli', 2, 3999, 7998, 'pending'),
+(5, 5, 3, 'westen choli', 1, 3999, 3999, 'pending');
 
 -- --------------------------------------------------------
 
@@ -229,7 +230,8 @@ CREATE TABLE `tbl_customer` (
 
 INSERT INTO `tbl_customer` (`customer_id`, `text_firstname`, `text_lastname`, `text_email`, `text_password`, `dob`, `upload_photo`, `gender`, `text_phone`, `text_address`, `sid`, `ctid`, `text_rdatetime`) VALUES
 (3, 'darshita', 'patel', 'darshita007@gmail.com', 'MTIzNDU2', '2021-09-19', 'uploads/customers/tradditaon.jpg', 'female', 9173357217, '150 feet ring road rajkot near telephone exchange 360005', 1, 1, '20/10/2022 08:57:36 am'),
-(4, 'satish', 'bahda', 'satish@gmail.com', 'MTIzNDU2', '2021-10-04', 'uploads/customers/8.webp', '', 9998003879, '150 feet ring road rajkot', 1, 1, '05/11/2022 09:51:44 am');
+(4, 'satish', 'bahda', 'satish@gmail.com', 'MTIzNDU2', '2021-10-04', 'uploads/customers/8.webp', '', 9998003879, '150 feet ring road rajkot', 1, 1, '05/11/2022 09:51:44 am'),
+(5, 'nameera', 'pathan', 'nameera@gmail.com', 'MTIzNDU2', '2021-10-14', 'uploads/customers/index.jpg', 'female', 9998003879, 'hi', 1, 1, '15/11/2022 15:09:41 pm');
 
 -- --------------------------------------------------------
 
@@ -350,7 +352,7 @@ ALTER TABLE `tbl_admin`
 -- AUTO_INCREMENT for table `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  MODIFY `cartid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `cartid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_city`
@@ -368,7 +370,7 @@ ALTER TABLE `tbl_contact`
 -- AUTO_INCREMENT for table `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_state`

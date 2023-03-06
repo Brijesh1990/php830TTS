@@ -5,46 +5,30 @@
   
   <div class="col-md-9">
    <div class="card">  
-   <div class="card-header"><h4>Best of Kurti's<br>
-  <b style="font-weight: 200; font-size: 18px;">Best of Electronics</b> <button type="button" class="btn  btn-sm float-end" id="btn">VIEW ALL</button></h4></div>
+   <div class="card-header"><h4>Dynamic Products<br>
+  <b style="font-weight: 200; font-size: 18px;">Best of Dynamic products</b> <button type="button" class="btn  btn-sm float-end" id="btn">VIEW ALL</button></h4></div>
+
     <div class="card-body">
      <div class="row">
+  
+      <?php 
+      foreach($shwprod as $row)
+      {
+      ?>
       <div class="col-md-3">
-        <img src="<?php echo $baseurl;?>images/20.webp" style="width:90%; height: 220px; margin-left: 5%;">
-        <p class="text-center">Kurti sports</p>
-        <p class="text-success text-center">From 1500 to 2500</p>
+        <img src="admin/<?php echo $row["productimage"];?>" style="width:90%; height: 220px; margin-left: 5%;">
+        <p class="text-center"><?php echo $row["productname"];?></p>
+        <p class="text-success text-center">Rs. <?php echo $row["offerprice"];?> <del> <?php echo $row["oldprice"];?></del></p>
         <center>
-        <button class="btn btn-danger btn-sm text-white mx-auto ml-5">AddToCart</button>
+        <a href="<?php echo $mainurl;?>productdetails?productid=<?php echo $row["product_id"];?>" class="btn btn-danger btn-sm text-white mx-auto ml-5">click for More details >></a>
         </center>
       </div>
-      <div class="col-md-3">
-        <img src="<?php echo $baseurl;?>images/21.webp" style="width:90%; height: 220px; margin-left: 5%;">
-        <p class="text-center">Kurti sports</p>
-        <p class="text-success text-center">From 1500 to 2500</p>
-        <center>
-        <button class="btn btn-danger btn-sm text-white mx-auto ml-5">AddToCart</button>
-        </center>
-      </div>
-      <div class="col-md-3">
-        <img src="<?php echo $baseurl;?>images/23.webp" style="width:90%; height: 220px; margin-left: 5%;">
-        <p class="text-center">Kurti sports</p>
-        <p class="text-success text-center">From 1500 to 2500</p>
-        <center>
-        <button class="btn btn-danger btn-sm text-white mx-auto ml-5">AddToCart</button>
-        </center>
-      </div>
-      <div class="col-md-3">
-        <img src="<?php echo $baseurl;?>images/25.webp" style="width:90%; height: 220px; margin-left: 5%;">
-        <p class="text-center">Kurti sports</p>
-        <p class="text-success text-center">From 1500 to 2500</p>
-        <center>
-        <button class="btn btn-danger btn-sm text-white mx-auto ml-5">AddToCart</button>
-        </center>
-      </div>
+   <?php 
+      }
+      ?>
+
      </div>
-
     </div>
-
    </div> 
 
   </div>
